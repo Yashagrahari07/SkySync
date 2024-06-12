@@ -2,6 +2,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
+import authRouter from './routes/auth.route.js';
 
 const app = express();
 
@@ -18,6 +19,7 @@ mongoose.connect(process.env.MONGO_URL)
 app.use(express.json());
 app.use(cookieParser());
 
+app.use('/api/auth', authRouter);
 
 app.use((err, req, res, next) => {
     const statusCode = err.statusCode || 500;
