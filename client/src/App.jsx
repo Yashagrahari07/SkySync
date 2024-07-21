@@ -6,6 +6,7 @@ import SignUp from "./pages/SignUp"
 import PrivateRoute from "./components/PrivateRoute"
 import Profile from "./pages/Profile"
 import About from "./pages/About"
+import Weather from "./pages/Weather"
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
       <Route path="/about" element={<About/>} />
       <Route element={<PrivateRoute/>}>
         <Route path="/profile" element={<Profile/>} />
+        <Route path="/weather" element={<Weather/>} />
       </Route>
     </Routes>
     </BrowserRouter>
